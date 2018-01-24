@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+    <html>
+    	<head>
+    		<title>Exercise</title>
+    		<link rel="stylesheet" type="text/css" href="2.css">
+    
+    		 <script type="text/javascript" src="jquery.js"></script>
+    	</head>
+    	<body>
+    
+    <div class="cloud">
+       	<div id="firstword" class="weight-1" onclick="func1()">beautiful</div> 	
+       	<div id="secondword" class="weight-2" onclick="func2()">true</div>
+        <div id="thirdword" class="weight-3" onclick="func3()">usefull</div>
+
+    <div class="interfce">
+    	<b>
+    		<button id="toggele_tag_increment">Increase</button>
+    	</b>
+    	<div id="size_counter">please select a tag</div>
+    
+    </div>
+    </div>
+   
+
+    <script type="text/javascript">
+ 	var tagincrement="up";
+ 	var maxium_font_size=0;
+
+    $(function(){//on docuemnt ready event default call
+ 
+	 $("#firstword,#secondword,#thirdword").click(function() {
+	    var original_fontSize = parseInt($(this).css("font-size"));
+	    var fontSize;
+	    if (tagincrement=="up") { fontSize = original_fontSize + 1 + "px"}
+	    	else {fontSize = original_fontSize - 1 + "px"}
+	    $(this).css({'font-size':fontSize});
+
+		if (parseInt(fontSize)>maxium_font_size) maxium_font_size=parseInt(fontSize);
+		$("#size_counter").html(parseInt(fontSize)).css({'font-size':maxium_font_size});
+		$("#toggele_tag_increment").css({'font-size':maxium_font_size});;
+		
+		});
+	
+	$("#toggele_tag_increment").click(function(){
+	  	if (tagincrement=="up") {
+	  		tagincrement="down";
+	  		$("#toggele_tag_increment").html("Decrease");
+	  	}
+	  		else {
+	  			tagincrement="up";
+				$("#toggele_tag_increment").html("Increase");
+	  		}
+	  });
+
+	 
+    });	
+  
+    </script>
+    </body>
+  </html>

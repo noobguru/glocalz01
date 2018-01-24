@@ -1,0 +1,19 @@
+.cloud .weight-1 {
+  font-size: 15px;
+}
+
+.cloud .weight-2 {
+  font-size: 25px;
+}
+
+.cloud .weight-3 {
+  font-size: 35px;
+}
+
+.cloud {
+	  display: flex;
+	border:solid black;
+}
+.interfce{
+display: flex;
+}
